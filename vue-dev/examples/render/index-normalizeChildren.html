@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js render example</title>
+    <!-- Delete ".min" for console warnings in development -->
+    <script src="../../dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">{{message}}</div>
+  </body>
+  <!-- <script type="text/x-template" id="hello-world-template">
+    <p>Hello hello hello</p>
+  </script> -->
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          message: 'Hello Vue!'
+        }
+      },
+      render(createElement) {
+        return createElement('div', {
+          attrs: {
+            id: 'app2'
+          }
+        }, [
+          '先写一些文字',
+          [
+            createElement('h1', ['主标题', '副标题']), 
+            [
+              '测试1',
+              createElement('span', '正文')
+            ]
+          ],
+          this.message
+        ])
+      }
+      // template: '#hello-world-template'
+    })
+  </script>
+</html>

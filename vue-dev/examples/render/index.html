@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js render example</title>
+    <!-- Delete ".min" for console warnings in development -->
+    <script src="../../dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">{{message}}</div>
+  </body>
+  <!-- <script type="text/x-template" id="hello-world-template">
+    <p>Hello hello hello</p>
+  </script> -->
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          message: 'Hello Vue!'
+        }
+      },
+      // render(createELement) {
+      //   return createELement('div', {
+      //     attrs: {
+      //       id: 'app1'
+      //     }
+      //   }, this.message)
+      // }
+      // template: '#hello-world-template'
+    })
+  </script>
+</html>
